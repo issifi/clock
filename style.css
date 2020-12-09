@@ -1,0 +1,37 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #bec3c5;
+}
+#header{
+    text-align: center;
+    font-size: 5rem;
+}
+#clock-icon{
+    width: 60px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* background-color: blueviolet; */
+}
+#hour{
+    font-size: 10rem;
+}
+#minute{
+    font-size: 9rem;
+}
+#second{
+    font-size: 8rem;
+}
+@media (max-width: 650px){
+    #hour{
+        font-size: 6rem;
+    }
+    #minute{
+        font-size: 5rem;
+    }
+    #second{
+        font-size: 4rem;
+    }   
+}
