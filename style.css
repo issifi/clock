@@ -1,6 +1,16 @@
+:root {
+    --backColor:#bec3c5;
+    --color: #202222;
+}
+[data-theme="dark"] {
+    --backColor:#202222;
+    --color: #bec3c5;
+}
+
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #bec3c5;
+    background-color: var(--backColor);
+    color: var(--color);
 }
 #header{
     text-align: center;
@@ -12,7 +22,7 @@ body{
 .container{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: baseline;
     /* background-color: blueviolet; */
 }
 #hour{
@@ -34,4 +44,14 @@ body{
     #second{
         font-size: 4rem;
     }   
+}
+/* dark mode checkbox */
+.theme-swich{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#clock-icon{
+    /* filter: invert(1); */
 }
