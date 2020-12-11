@@ -19,7 +19,7 @@ body{
 #clock-icon{
     width: 60px;
 }
-.container{
+.numeric-container{
     display: flex;
     justify-content: center;
     align-items: baseline;
@@ -102,4 +102,96 @@ input:focus + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+/* clock mode switch */
+.clock-switch{
+    position: absolute;
+    top: 20px;
+    
+}
+.clock-toggle-info {
+    font-size: 20px;
+}
+/* analog clock */
+
+.analog-container {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+.sircle{
+    position: relative;
+    border: 3px solid black;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+.mark {
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    width: 50%;
+}
+ [data-h="12"]{
+    transform: rotate(90deg);
+}
+[data-h="1"]{
+    transform: rotate(120deg);
+}
+[data-h="2"]{
+    transform: rotate(150deg);
+}
+[data-h="3"]{
+    transform: rotate(180deg);
+}
+[data-h="4"]{
+    transform: rotate(210deg);
+}
+[data-h="5"]{
+    transform: rotate(240deg);
+}
+[data-h="6"]{
+    transform: rotate(270deg);
+}
+[data-h="7"]{
+    transform: rotate(300deg);
+}
+[data-h="8"]{
+    transform: rotate(330deg);
+}
+
+[data-h="10"]{
+    transform: rotate(30deg);
+}
+[data-h="11"]{
+    transform: rotate(60deg);
+}
+
+.h-mark{
+    /* border: 1px solid black; */
+    background-color: black;
+    width: 10px;
+    height: 4px;
+}
+
+.hand {
+    width: 50%;
+    height: 6px;
+    background: black;
+    /* border-radius: 50%; */
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.min-hand {
+    width: 45%;
+    left: 5%;
+}
+.hour-hand {
+    width: 40%;
+    left: 10%;
 }
