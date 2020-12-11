@@ -5,13 +5,24 @@ function setDate(){
     const now = new Date();
 
     const seconds = now.getSeconds();
-    second.innerHTML = seconds;
-
     const mins = now.getMinutes()
-    minute.innerHTML = `${mins}:`;
-
     const hours = now.getHours();
+    
+    if(seconds < 10){
+        second.innerHTML = `0${seconds}`;
+    }
+    else{
+        second.innerHTML = seconds;
+    }
+    
+    if(mins < 10){
+        minute.innerHTML = `0${mins}:`;
+    }
+    else{
+        minute.innerHTML = `${mins}:`;
+    }
     hour.innerHTML = `${hours}:`;
+
 }
 setInterval(setDate, 1000);
 setDate();
