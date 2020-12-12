@@ -82,10 +82,12 @@ function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
         clock.style.filter = 'invert(0.7)';
+        settingsBtnOpen.style.filter = 'invert(0.7)';
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
         clock.style.filter = 'invert(0)';
+        settingsBtnOpen.style.filter = 'invert(0)';
     }    
 }
 toggleSwitch.addEventListener('change', switchTheme, false);
