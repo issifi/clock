@@ -6,28 +6,21 @@ const secondHand = document.querySelector('.second-hand');
 const minsHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
 
-
-function analogClock(){
+let clockTipe = 'analog'
+function setDate(){
     const now = new Date();
 
     const seconds = now.getSeconds();
     const mins = now.getMinutes()
     const hours = now.getHours();
-
+    // analog clock 
     const secondDeg = ((seconds/60)*360)+90;
     const minsDeg = ((mins/60)*360)+((seconds/60)*6)+90;
     const hourDeg = ((hours/12)*360)+((mins/60)*30)+90
     secondHand.style.transform = `rotate(${secondDeg}deg)`;
     minsHand.style.transform = `rotate(${minsDeg}deg)`;
     hourHand.style.transform = `rotate(${hourDeg}deg)`;
-};
-function numericClok(){
-    const now = new Date();
-
-    const seconds = now.getSeconds();
-    const mins = now.getMinutes()
-    const hours = now.getHours();
-
+    // digital clock
     if(seconds < 10){
         second.innerHTML = `0${seconds}`;
     }
@@ -41,15 +34,10 @@ function numericClok(){
     else{
         minute.innerHTML = `${mins}:`;
     }
-    hour.innerHTML = `${hours}:`;
-
-};
-let clockTipe = 'analog'
-function setDate(){
-    if(clockTipe == 'analog'){
-        analogClock();
+    if(hours < 10){
+        hour.innerHTML = `0${hours}:`;
     }else{
-        numericClok();
+        hour.innerHTML = `${hours}:`;
     }
     
 }
@@ -84,6 +72,7 @@ function checkClockMode(){
     }
 }
 checkClockMode();
+
 // darck mode
 
 const toggleSwitch = document.querySelector('#theme');
@@ -100,3 +89,16 @@ function switchTheme(e) {
     }    
 }
 toggleSwitch.addEventListener('change', switchTheme, false);
+
+// side setting panel open and close function
+const settingsBtnOpen = document.querySelector('#settings');
+const settingsBtnClose = document.querySelector('#close-panel');
+const settingsPanel = document.querySelector('.settings-panel');
+settingsBtnOpen.addEventListener('click', openStn);
+settingsBtnClose.addEventListener('click', closeStn)
+function openStn(){
+    settingsPanel.style.width = '300px'
+}
+function closeStn(){
+    settingsPanel.style.width = '0'
+}

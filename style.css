@@ -104,16 +104,56 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* clock mode switch */
+/* ******** clock mode switch ********** */
 .clock-switch{
-    position: absolute;
-    top: 20px;
-    
+    padding: 5px;
+    /* background-color: rgba(48, 93, 134, 0.226); */
+    /* border-radius: 10px; */
+    /* debaggin */
+    display: block;
+    z-index: 1;
 }
 .clock-toggle-info {
     font-size: 20px;
 }
-/* analog clock */
+/* settings icon */
+.settings-panel {
+    height: 100%;
+    width: 0;
+    display: block;
+    overflow-x: hidden;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+.settings-title {
+    margin: 30px 10px;
+    text-align: center;
+}
+#close-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0;
+    font-size: larger;
+    font-weight: 900;
+    /* color: var(--color); */
+    cursor: pointer;
+}
+
+#settings {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+/* ************************************ */
+/* ******** ANALOG CLOCK STYLING ************* */
+/* ************************************* */
 
 .analog-container {
     width: 300px;
@@ -122,7 +162,7 @@ input:checked + .slider:before {
 }
 .sircle{
     position: relative;
-    border: 3px solid black;
+    border: 3px solid var(--color);
     border-radius: 50%;
     width: 100%;
     height: 100%;
@@ -133,6 +173,7 @@ input:checked + .slider:before {
     transform-origin: 100%;
     width: 50%;
 }
+
  [data-h="12"]{
     transform: rotate(90deg);
 }
@@ -170,7 +211,7 @@ input:checked + .slider:before {
 
 .h-mark{
     /* border: 1px solid black; */
-    background-color: black;
+    background-color: var(--color);
     width: 10px;
     height: 4px;
 }
@@ -178,7 +219,7 @@ input:checked + .slider:before {
 .hand {
     width: 50%;
     height: 6px;
-    background: black;
+    background: var(--color);
     /* border-radius: 50%; */
     position: absolute;
     top: 50%;
