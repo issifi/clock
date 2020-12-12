@@ -95,12 +95,12 @@ toggleSwitch.addEventListener('change', switchTheme, false);
 // side setting panel open and close function
 const settingsBtnOpen = document.querySelector('#settings');
 const settingsBtnClose = document.querySelector('#close-panel');
-const settingsPanel = document.querySelector('.settings-panel');
+const sideNav = document.querySelector('.sidenav');
 settingsBtnOpen.addEventListener('click', openStn);
 settingsBtnClose.addEventListener('click', closeStn)
 function openStn(){
-    settingsPanel.style.width = '300px'
+    sideNav.style.width = '300px';
 }
 function closeStn(){
-    settingsPanel.style.width = '0'
+    sideNav.style.width = '0';
 }

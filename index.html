@@ -8,70 +8,75 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="header"><img id="clock-icon" src="img/clock-solid.svg" alt="clock icon"> Clock</h1>
-    <div class="numeric-container" style="display: none;">
-        <div id="hour">00</div>
-        <div id="minute">00</div>
-        <div id="second">00</div>
-    </div>
-    <!-- analog clock -->
-    <div class="analog-container">
-        <div class="sircle">
-            <div class="mark" data-h="12">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark" data-h="1">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark" data-h="2">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 3" data-h="3">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 4" data-h="4">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 5" data-h="5">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 6" data-h="6">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 7" data-h="7">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 8" data-h="8">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 9" data-h="9">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 10" data-h="10">
-                <div class="h-mark"></div>
-            </div>
-            <div class="mark 11" data-h="11">
-                <div class="h-mark"></div>
-            </div>
-            <!-- hand of the clock -->
-            <div class="hand hour-hand"></div>
-            <div class="hand min-hand"></div>
-            <div class="hand second-hand"></div>
+    <main>
+
+        <h1 id="header"><img id="clock-icon" src="img/clock-solid.svg" alt="clock icon"> Clock</h1>
+        <div class="numeric-container" style="display: none;">
+            <div id="hour">00</div>
+            <div id="minute">00</div>
+            <div id="second">00</div>
         </div>
-    </div>
+        <!-- analog clock -->
+        <div class="analog-container">
+            <div class="sircle">
+                <div class="mark" data-h="12">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark" data-h="1">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark" data-h="2">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 3" data-h="3">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 4" data-h="4">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 5" data-h="5">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 6" data-h="6">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 7" data-h="7">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 8" data-h="8">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 9" data-h="9">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 10" data-h="10">
+                    <div class="h-mark"></div>
+                </div>
+                <div class="mark 11" data-h="11">
+                    <div class="h-mark"></div>
+                </div>
+                <!-- hand of the clock -->
+                <div class="hand hour-hand"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+    </main>
     <!-- clock mode toggle switch -->
 
     <img src="img/cog-solid.svg" alt="settings" id="settings">
+    <div class="sidenav">
 
-    <div class="settings-panel">
-        <h3 class="settings-title">SETTINGS</h3>
-        <p id="close-panel">X</p>
-        <div class="clock-switch">
-            <label class="switch">
-                <input type="checkbox" id="clockMode">
-                <span class="slider"></span>
-            </label>
-            <span class="clock-toggle-info">Analog / Numeric</span>        
+        <div class="settings-panel">
+            <h3 class="settings-title">SETTINGS</h3>
+            <p id="close-panel">X</p>
+            <div class="clock-switch">
+                <label class="switch">
+                    <input type="checkbox" id="clockMode">
+                    <span class="slider"></span>
+                </label>
+                <span class="clock-toggle-info">Analog / Numeric</span>        
+            </div>
         </div>
     </div>
 
