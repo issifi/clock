@@ -5,8 +5,17 @@ const second = document.querySelector('#second')
 const secondHand = document.querySelector('.second-hand');
 const minsHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
-
-let clockTipe = 'analog'
+// get the setting from local storage
+let clockTipe = 'analog';
+let theme ;
+if(localStorage.length>0){
+    if(localStorage.hasOwnProperty('clockMode')){
+        clockTipe = localStorage.getItem('clockMode')
+    }
+    if(localStorage.hasOwnProperty('themeMode')){
+        theme = localStorage.getItem('themeMode')
+    }
+}
 function setDate(){
     const now = new Date();
 
@@ -58,15 +67,17 @@ function clockMode(e) {
         analog.style.display = 'block';
         numeric.style.display = 'none';
     }
+    // set the setting to localstorage
+    setClockMode();
 }
 clockSwitch.addEventListener('change',clockMode)
 function checkClockMode(){
-    if(clockSwitch.checked){
-        clockTipe = 'numeric'
+    if(clockTipe == 'numeric'){
+        clockSwitch.checked = true;
         analog.style.display = 'none';
         numeric.style.display = 'flex';
-    }else {
-        clockTipe = 'analog'
+    }else  {
+        clockSwitch.checked = false;
         analog.style.display = 'block';
         numeric.style.display = 'none';
     }
@@ -77,21 +88,36 @@ checkClockMode();
 
 const toggleSwitch = document.querySelector('#theme');
 const clock = document.querySelector('#clock-icon');
-toggleSwitch.checked = false
+toggleSwitch.checked = false;
 function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
         clock.style.filter = 'invert(0.7)';
         settingsBtnOpen.style.filter = 'invert(0.7)';
+        theme = 'dark';
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
         clock.style.filter = 'invert(0)';
         settingsBtnOpen.style.filter = 'invert(0)';
+        theme = 'light';
     }    
+    setThemeMode();
 }
-toggleSwitch.addEventListener('change', switchTheme, false);
-
+toggleSwitch.addEventListener('change', switchTheme);
+function checkTheme(){
+    if(theme == 'dark'){
+        toggleSwitch.checked = true;
+        document.documentElement.setAttribute('data-theme', 'dark');
+        clock.style.filter = 'invert(0.7)';
+        settingsBtnOpen.style.filter = 'invert(0.7)';
+    }else{
+        toggleSwitch.checked = false;
+        document.documentElement.setAttribute('data-theme', 'light');
+        clock.style.filter = 'invert(0)';
+        settingsBtnOpen.style.filter = 'invert(0)';
+    }
+}
 // side setting panel open and close function
 const settingsBtnOpen = document.querySelector('#settings');
 const settingsBtnClose = document.querySelector('#close-panel');
@@ -104,3 +130,13 @@ function openStn(){
 function closeStn(){
     sideNav.style.width = '0';
 }
+// local storage set function
+function setClockMode (){
+    localStorage.setItem('clockMode', clockTipe)
+}
+function setThemeMode(){
+    localStorage.setItem('themeMode', theme)
+}
+
+// check the selected theme in lical storage
+checkTheme();
