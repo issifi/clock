@@ -122,16 +122,18 @@ input:checked + .slider:before {
     z-index: 1;
     top: 0;
     left: 0;
-    transition: 0.3s ease-in;
+    background-color: rgba(75, 70, 70, 0.603);
 }
 .settings-panel {
     position: absolute;
     height: 100%;
-    width: 95%;
+    width: 300px;
     display: block;
+    overflow: hidden;
     border-right: 1px solid var(--color);
     background-color: var(--backColor);
     box-shadow: 5px 0 5px;
+    transition: all 0.3s ;
 }
 
 .settings-title {

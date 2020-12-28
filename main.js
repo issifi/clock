@@ -122,13 +122,17 @@ function checkTheme(){
 const settingsBtnOpen = document.querySelector('#settings');
 const settingsBtnClose = document.querySelector('#close-panel');
 const sideNav = document.querySelector('.sidenav');
+const settingPanel = document.querySelector('.settings-panel')
 settingsBtnOpen.addEventListener('click', openStn);
 settingsBtnClose.addEventListener('click', closeStn)
 function openStn(){
-    sideNav.style.width = '300px';
+    sideNav.style.width = '100%';
+    settingPanel.style.width = '300px';
 }
 function closeStn(){
     sideNav.style.width = '0';
+    settingPanel.style.width = '0'
+
 }
 // local storage set function
 function setClockMode (){
