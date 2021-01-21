@@ -12,6 +12,9 @@ body{
     background-color: var(--backColor);
     color: var(--color);
 }
+main{
+    margin-top: 85px;
+}
 #header{
     text-align: center;
     font-size: 5rem;
@@ -48,15 +51,16 @@ body{
 /* dark mode checkbox */
 .theme-swich{
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
 }
 
 .switch {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 60px;
   height: 34px;
+  
 }
 
 .switch input { 
@@ -103,6 +107,12 @@ input:focus + .slider {
 input:checked + .slider:before {
   transform: translateX(26px);
 }
+.theme-swich .switch{
+    margin: 0 auto;
+}
+.theme-title {
+    font-weight: 900;
+}
 
 /* ******** clock mode switch ********** */
 .clock-switch{
@@ -110,8 +120,29 @@ input:checked + .slider:before {
     display: block;
     width: 255px;
 }
+.clock-switch .switch{
+    display: inline-block;
+}
+.clock-switch .slider{
+    top: -8px;
+    bottom: 8px;
+    background-color: var(--color);
+}
+.clock-switch .slider::before{
+    background-color: var(--backColor);
+}
+.clock-switch input:checked + .slider {
+    background-color: var(--color);
+}
+.clock-switch input:checked + .slider:before {
+    background-color: var(--backColor);
+}  
+.clock-switch input:focus + .slider {
+    box-shadow: 0 0 1px var(--color);
+}
 .clock-toggle-info {
     font-size: 20px;
+    font-weight: 900;
 }
 /* settings icon */
 .sidenav {

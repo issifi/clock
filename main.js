@@ -57,15 +57,18 @@ setDate();
 const analog = document.querySelector('.analog-container');
 const numeric = document.querySelector('.numeric-container') 
 const clockSwitch = document.querySelector('#clockMode')
+const clockToggleInfo = document.querySelector('.clock-toggle-info');
 function clockMode(e) {
     if(e.target.checked){
         clockTipe = 'numeric'
         analog.style.display = 'none';
         numeric.style.display = 'flex';
+        clockToggleInfo.textContent = 'Numeric Clock';
     }else {
         clockTipe = 'analog'
         analog.style.display = 'block';
         numeric.style.display = 'none';
+        clockToggleInfo.textContent = 'Analog Clock';
     }
     // set the setting to localstorage
     setClockMode();
@@ -76,10 +79,12 @@ function checkClockMode(){
         clockSwitch.checked = true;
         analog.style.display = 'none';
         numeric.style.display = 'flex';
+        clockToggleInfo.textContent = 'Numeric Clock';
     }else  {
         clockSwitch.checked = false;
         analog.style.display = 'block';
         numeric.style.display = 'none';
+        clockToggleInfo.textContent = 'Analog Clock';
     }
 }
 checkClockMode();
@@ -88,6 +93,7 @@ checkClockMode();
 
 const toggleSwitch = document.querySelector('#theme');
 const clock = document.querySelector('#clock-icon');
+const toggleSwitchTitle = document.querySelector('.theme-title');
 toggleSwitch.checked = false;
 function switchTheme(e) {
     if (e.target.checked) {
@@ -95,12 +101,14 @@ function switchTheme(e) {
         clock.style.filter = 'invert(0.7)';
         settingsBtnOpen.style.filter = 'invert(0.7)';
         theme = 'dark';
+        toggleSwitchTitle.textContent = 'Dark Mode';
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
         clock.style.filter = 'invert(0)';
         settingsBtnOpen.style.filter = 'invert(0)';
         theme = 'light';
+        toggleSwitchTitle.textContent = 'Light Mode';
     }    
     setThemeMode();
 }
