@@ -119,11 +119,13 @@ function checkTheme(){
         document.documentElement.setAttribute('data-theme', 'dark');
         clock.style.filter = 'invert(0.7)';
         settingsBtnOpen.style.filter = 'invert(0.7)';
+        toggleSwitchTitle.textContent = 'Dark Mode';
     }else{
         toggleSwitch.checked = false;
         document.documentElement.setAttribute('data-theme', 'light');
         clock.style.filter = 'invert(0)';
         settingsBtnOpen.style.filter = 'invert(0)';
+        toggleSwitchTitle.textContent = 'Light Mode';
     }
 }
 // side setting panel open and close function
